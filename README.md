@@ -1,18 +1,19 @@
-# To Do List application
-
-# This todo app is an example of a notebook.
-The app allows:
-- Add tasks to notebook
-- Delete tasks
-- Filter tasks
-- Prioritize tasks for completion
-- Downloading tasks on the server
+# To Do List application server side(MongoDB)
 
 ## Application Technology Stack
 
-The application is written in HTML/CSS/JavaScript
+The application is written by JavaScript/NodeJS/ExpressJS
 
 # To launch the app, you need to:
+
+ Create new directory and open terminal in this directory.
+ Follow the next commands:
+ 
+ - Clone the repository
+
+  ```sh
+ git clone https://github.com/Superior-925/TodoApp_MongoDB_back.git
+ ```
 
 
 - Open file /etc/hosts with sudo authorizing and add next string with new host:
