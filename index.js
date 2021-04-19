@@ -53,8 +53,9 @@ app.delete('/todos', async function(req, res) {
         await collection.drop(function(err, result)
         {
             if(err){
-                return console.log(err);
+                return res.status(422).send({ message: "Todo doesn't exist!" });
             }
+            res.status(204).send();
         });
     } catch (e) {
         res.status(404).send({ message: "Collection doesn't exist!" });
