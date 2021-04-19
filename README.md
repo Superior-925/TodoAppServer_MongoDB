@@ -2,56 +2,27 @@
 
 ## Application Technology Stack
 
-The application is written by JavaScript/NodeJS/ExpressJS
+The application is written by JavaScript/NodeJS/ExpressJS/MongoDB
 
 # To launch the app, you need to:
 
- Create new directory and open terminal in this directory.
- Follow the next commands:
+Open terminal and follow the next commands:
  
  - Clone the repository
 
   ```sh
- git clone https://github.com/Superior-925/TodoApp_MongoDB_back.git
+$ git clone https://github.com/Superior-925/TodoApp_MongoDB_back.git
  ```
 
-
-- Open file /etc/hosts with sudo authorizing and add next string with new host:
- 
- ```sh
- 127.0.0.1 devdemo
+- Go to project folder
+```sh
+ $ cd TodoApp_MongoDB_back
  ```
 
-- Open app folder in terminal and run the following commands:
+- Install dependencies by NPM
 
- Initialize npm in the project folder by the command
-
- ```sh
- $ npm init -y
-```
-
- Install express framework 
- 
  ```
- $ npm install express --save
-```
-
- Install nodemon
- 
- ```sh
-$ npm install --save-dev nodemon
-```
-
- Install body-parser library
- 
- ```sh
-$ npm install --save body-parser
-```
-
- Install CORS
- 
- ```sh
-$ npm i connect-timeout cors
+$ npm install
 ```
 
  Start the server by the command
@@ -60,3 +31,5 @@ $ npm i connect-timeout cors
 $ npm run start:dev
 ```
 
+If you have questions - contact me on email skykeeper925@gmail.com.
+Best regards Anton Logunov.
