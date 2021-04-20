@@ -34,33 +34,35 @@ app.post("/todos", bodyParser.json(), async (req, res, next) => {
     }
 });
 
-app.delete("/todos/ids", bodyParser.json(), async (req, res) => {
+app.delete("/todos", bodyParser.json(), async (req, res) => {
+    console.log(req.body.length);
 
-    try {
-        for (i = 0; i < req.body.length; i++) {
-            await Todo.deleteOne({ _id: req.body[i] });
-        }
-        res.status(204).send();
-    } catch (e) {
-        res.status(404).send({ message: "Todo doesn't exist!" });
-    }
-});
-
-app.delete('/todos', async function(req, res) {
-
-    try {
-        const collection = db.collection("todos");
-        await collection.drop(function(err, result)
-        {
-            if(err){
-                return res.status(422).send({ message: "Todo doesn't exist!" });
+    if(req.body.length !==0) {
+        try {
+            for (i = 0; i < req.body.length; i++) {
+                await Todo.deleteOne({ _id: req.body[i] });
             }
             res.status(204).send();
-        });
-    } catch (e) {
-        res.status(404).send({ message: "Collection doesn't exist!" });
+        } catch (e) {
+            res.status(404).send({ message: "Todo doesn't exist!" });
+        }
+    }
+    else if (req.body.length === 0) {
+        try {
+            const collection = db.collection("todos");
+            await collection.drop(function(err, result)
+            {
+                if(err){
+                    return res.status(422).send({ message: "Todo doesn't exist!" });
+                }
+                res.status(204).send();
+            });
+        } catch (e) {
+            res.status(404).send({ message: "Collection doesn't exist!" });
+        }
     }
 });
+
 
 app.patch("/todos/:id", bodyParser.json(), async (req, res) => {
 
