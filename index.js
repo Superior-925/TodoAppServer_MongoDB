@@ -35,7 +35,6 @@ app.post("/todos", bodyParser.json(), async (req, res, next) => {
 });
 
 app.delete("/todos", bodyParser.json(), async (req, res) => {
-    console.log(req.body.length);
 
     if(req.body.length !==0) {
         try {
@@ -46,8 +45,12 @@ app.delete("/todos", bodyParser.json(), async (req, res) => {
         } catch (e) {
             res.status(404).send({ message: "Todo doesn't exist!" });
         }
+
+        returmn
     }
-    else if (req.body.length === 0) {
+
+
+    if (req.body.length === 0) {
         try {
             const collection = db.collection("todos");
             await collection.drop(function(err, result)
