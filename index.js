@@ -45,8 +45,7 @@ app.delete("/todos", bodyParser.json(), async (req, res) => {
         } catch (e) {
             res.status(404).send({ message: "Todo doesn't exist!" });
         }
-
-        returmn
+        return Promise.resolve();
     }
 
 
@@ -63,6 +62,7 @@ app.delete("/todos", bodyParser.json(), async (req, res) => {
         } catch (e) {
             res.status(404).send({ message: "Collection doesn't exist!" });
         }
+        return Promise.resolve();
     }
 });
 
